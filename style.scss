@@ -1,0 +1,110 @@
+$size: 20px;
+$color-button: #00f;
+$color-bg:#78acff;
+$color-text:#fff;
+$color-secondary: #000;
+
+@mixin noBorder {
+    border:none;
+    outline: none
+}
+
+@mixin content {
+    width:calc(100% - $size);
+    max-width:600px;
+    background-color: $color-bg;
+    border-radius:$size;
+    padding:$size;
+    color:$color-text;
+    -webkit-box-shadow: 8px 8px 24px 0px $color-secondary;
+    -moz-box-shadow: 8px 8px 24px 0px $color-secondary;
+    box-shadow: 8px 8px 24px 0px $color-secondary;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form {
+    @include content;
+
+    .title {
+        font-size: $size * 1.2;
+        font-weight:900;
+        text-align: center;
+    }
+
+    .inputContainer {
+        margin-top: $size;
+
+        .inputContainer__label {
+            font-size: $size * .8;
+        }
+
+        .inputContainer__label--consent {
+            font-size: $size * .6;
+            width:calc(100% - $size * 1.5)
+        }
+
+        .inputContainer__input {
+            width:100%;
+            padding:$size * .4;
+            border-radius:$size * .25;
+            @include noBorder()
+        }
+
+        .inputContainer__input--checkbox {
+            width:auto;
+            max-width:$size;
+            margin: $size * .25 $size * .5 0 0
+        }
+
+        .inputContainer__errorText {
+            color:rgb(213, 28, 28);
+            font-size: $size * .8;
+        }
+    }
+
+    .inputContainer--flex {
+        display:flex;
+        align-items: flex-start;
+        flex-wrap:wrap
+    }
+
+    .button {
+        padding:$size * .5 $size;
+        margin:$size auto;
+        background-color: $color-button;
+        cursor:pointer;
+        display:block;
+        color:$color-text;
+        font-weight:900;
+        @include noBorder()
+    }
+
+    .button:hover {
+        background-color: lighten($color-button, 10%);
+    }
+}
+
+.typ {
+    @include content;
+    text-align: center;
+    font-size: $size * 1.5;
+    font-weight:900;
+    padding: $size * 5 $size 
+}
+
+.hidden {
+    display:none
+}

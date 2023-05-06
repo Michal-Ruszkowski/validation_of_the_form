@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Michal Ruszkowski" />
+  <title>Form</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+  <form class="form" action="post">
+    <h2 class="title">Form validation</h2>
+    <div class="inputContainer">
+      <label class="inputContainer__label" for="name">Name</label>
+      <input class="inputContainer__input" id="name" name="name" type="text" placeholder="John Doe" data-errorContainer="error-1"/>
+      <p class="inputContainer__errorText" id="error-1"></p>
+    </div>
+    <div class="inputContainer">
+      <label class="inputContainer__label" for="email">Email</label>
+      <input class="inputContainer__input" id="email" name="email" type="email" placeholder="john@doe.com" data-errorContainer="error-2"/>
+      <p class="inputContainer__errorText" id="error-2"></p>
+    </div>
+    <div class="inputContainer">
+      <label class="inputContainer__label" for="phone">Phone</label>
+      <input class="inputContainer__input" id="phone" name="phone" type="tel" placeholder="+48111222333" data-errorContainer="error-3"/>
+      <p class="inputContainer__errorText" id="error-3"></p>
+    </div>
+    <div class="inputContainer">
+      <label class="inputContainer__label" for="birthday">Birthday</label>
+      <input class="inputContainer__input" id="birthday" name="birthday" type="date"  placeholder="dd.mm.yyyy" data-errorContainer="error-4"/>
+      <p class="inputContainer__errorText" id="error-4"></p>
+    </div>
+    <div class="inputContainer inputContainer--flex">
+      <input class="inputContainer__input inputContainer__input--checkbox" id="consent1" name="consent1" type="checkbox" data-errorContainer="error-5"/>
+      <label class="inputContainer__label inputContainer__label--consent" for="consent1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</label>
+      <p class="inputContainer__errorText" id="error-5"></p>
+    </div>
+    <div class="inputContainer inputContainer--flex">
+      <input class="inputContainer__input inputContainer__input--checkbox" id="consent2" name="consent2" type="checkbox" data-errorContainer="error-6"/>
+      <label class="inputContainer__label inputContainer__label--consent" for="consent2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</label>
+      <p class="inputContainer__errorText" id="error-6"></p>
+    </div>
+    <input class="button" type="submit" value="Send" />
+  </form>
+  <p class="typ hidden">Thank you for signing up to our newsletter!</p>
+  <script src="script.js"></script>
+</body>
+
+</html>
